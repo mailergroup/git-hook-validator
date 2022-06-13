@@ -11,8 +11,8 @@ To use this hook, you need to have [jq](https://stedolan.github.io/jq/download/)
 In existing project:
 ```
 cd .git/hooks
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg --output commit-msg
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json --output commit-msg-config.json
+curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output commit-msg
+curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output commit-msg-config.json
 chmod a+x commit-msg
 ```
 
@@ -22,8 +22,8 @@ If you want, you can install this hook globally, so it's going to be available i
 ```
 git config --global init.templatedir '~/.git-templates'
 mkdir ~/.git-templates/hooks
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg --output commit-msg
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json --output commit-msg-config.json
+curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output commit-msg
+curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output commit-msg-config.json
 chmod a+x commit-msg
 ```
 
