@@ -22,6 +22,7 @@ If you want, you can install this hook globally, so it's going to be available i
 ```
 git config --global init.templatedir '~/.git-templates'
 mkdir ~/.git-templates/hooks
+cd ~/.git-templates/hooks
 curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output commit-msg
 curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output commit-msg-config.json
 chmod a+x commit-msg
