@@ -42,6 +42,8 @@ function loadBranchConfiguration()
     fi
 
     types=($(jq -r '.types[]' "$CONFIG"))
+    mainBranch=$(jq -r .main_branch_name "$CONFIG")
+    developBranch=$(jq -r .develop_branch_name "$CONFIG")
 }
 
 # Dynamically build regular expression used for branch name validation
@@ -49,7 +51,7 @@ function buildBranchRegex()
 {
     loadBranchConfiguration
     
-    regexp="("
+    regexp="^((${mainBranch}|${developBranch}))|("
 
     for type in "${types[@]}"
     do

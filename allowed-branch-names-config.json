@@ -1,5 +1,7 @@
 {
     "enabled": true,
+    "main_branch_name": "main",
+    "develop_branch_name": "develop",
     "types": [
         "feature",
         "hotfix",
