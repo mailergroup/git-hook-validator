@@ -27,6 +27,8 @@ function setBranchConfigurationPath()
     
     if [ -f "$localConfig" ]; then
         CONFIG=$localConfig
+    elif [ -n "$GIT_BRANCH_NAMES_VALIDATION_CONFIG" ]; then
+        CONFIG=$GIT_BRANCH_NAMES_VALIDATION_CONFIG
     fi
 }
 
