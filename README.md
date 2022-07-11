@@ -8,11 +8,7 @@ To use these hooks, you need to have [jq](https://stedolan.github.io/jq/download
 In existing project:
 ```
 cd .git/hooks
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output commit-msg
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output commit-msg-config.json
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/pre-push?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output pre-push
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/post-checkout?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output post-checkout
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/allowed-branch-names-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output allowed-branch-names-config.json
+git clone git@github.com:mailergroup/git-hook-validator.git .
 chmod a+x commit-msg post-checkout pre-push
 ```
 
@@ -23,16 +19,12 @@ If you want, you can install this hook globally, so it's going to be available i
 git config --global init.templatedir '~/.git-templates'
 mkdir ~/.git-templates/hooks
 cd ~/.git-templates/hooks
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output commit-msg
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/commit-msg-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output commit-msg-config.json
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/pre-push?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output pre-push
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/post-checkout?token=GHSAT0AAAAAABU5BOKB7MUOB7NIRWTCEN2KYVHHARA --output post-checkout
-curl https://raw.githubusercontent.com/mailergroup/git-hook-validator/main/allowed-branch-names-config.json?token=GHSAT0AAAAAABU5BOKAI5DS5OXURIRVAY5YYVHHA6A --output allowed-branch-names-config.json
+git clone git@github.com:mailergroup/git-hook-validator.git .
 chmod a+x commit-msg post-checkout pre-push
 ```
 
 ## Usage
-Once you download files you need to reinitialize your repo with `git init`. 
+Once you download files you need to reinitialize your existing repo with `git init`. 
 
 ### Conventional Commit Validation
 A Git pre-commit hook which validates commit messages using [Conventional Commits](https://www.conventionalcommits.org/) standard
