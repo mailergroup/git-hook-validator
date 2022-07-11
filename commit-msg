@@ -10,7 +10,7 @@ function checkIfJqExists()
 }
 
 # Check if config file exists
-function checkIfConfigFileExists()
+function checkIfCommitMessageConfigFileExists()
 {
     if [[ ! -f "$CONFIG" ]]; then
         echo -e "Hook config file is missing. To learn how to set one, please see a README."
@@ -21,7 +21,7 @@ function checkIfConfigFileExists()
 # Set configuration path
 # Configuration can either be part of existing repo or a path stored in env variable
 # Local configuration overrides global configuration
-function setConfigurationPath()
+function setCommitMessageConfigurationPath()
 {
     localConfig="$PWD/.git/hooks/commit-msg-config.json"
     
@@ -33,7 +33,7 @@ function setConfigurationPath()
 }
 
 # Loads configuration from a file
-function loadConfiguration()
+function loadCommitMessageConfiguration()
 {
     isEnabled=$(jq -r .enabled "$CONFIG")
 
@@ -48,9 +48,9 @@ function loadConfiguration()
 }
 
 # Dynamically build regular expression used for commit message validation
-function buildRegex()
+function buildCommitMessageRegex()
 {
-    loadConfiguration
+    loadCommitMessageConfiguration
     
     regexp="^[.0-9]+$|"
 
@@ -68,7 +68,7 @@ function buildRegex()
 }
 
 # Print an error message which explains what is wrong with the commit message itself
-function displayOutput()
+function displayCommitMessageOutput()
 {
     NOCOLOR='\033[0m'
     RED='\033[0;31m'
@@ -89,19 +89,19 @@ function displayOutput()
 }
 
 # Init the hook
-setConfigurationPath
-checkIfConfigFileExists
+setCommitMessageConfigurationPath
+checkIfCommitMessageConfigFileExists
 checkIfJqExists
-loadConfiguration
+loadCommitMessageConfiguration
 
 # Get the first line of a commit message
 INPUT_FILE=$1
 START_LINE=`head -n1 $INPUT_FILE`
 
-buildRegex
+buildCommitMessageRegex
 
 # Validate commit message agains regexp
 if [[ ! $START_LINE =~ $regexp ]]; then
-    displayOutput
+    displayCommitMessageOutput
     exit 1
 fi

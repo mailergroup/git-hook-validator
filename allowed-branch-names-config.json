@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "types": [
+        "feature",
+        "hotfix",
+        "bugfix"
+    ]
+}
