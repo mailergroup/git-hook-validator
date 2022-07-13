@@ -1,0 +1,10 @@
+{
+    "name": "mailergroup-git-hooks",
+    "private": true,
+    "version": "1.0.0",
+    "release": {
+        "branches": [
+          "main"
+        ]
+      }
+}
