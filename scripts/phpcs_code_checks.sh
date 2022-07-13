@@ -1,5 +1,6 @@
 #!/bin/bash
 BIN="./vendor/bin"
+STANDARD="PSR12"
 
 # Check if jq is installed
 function checkIfPhpCsExist()
