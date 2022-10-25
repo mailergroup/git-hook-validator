@@ -1,0 +1,8 @@
+#!/bin/bash
+
+HOOK_PHPCS_CODE_VALIDATION=$PWD/.git/hooks/scripts/phpcs_code_checks.sh
+
+if [ -f "$HOOK_PHPCS_CODE_VALIDATION" ]; then
+    /bin/bash $HOOK_PHPCS_CODE_VALIDATION
+fi
+

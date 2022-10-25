@@ -9,7 +9,7 @@ In existing project:
 ```
 cd .git/hooks
 git clone git@github.com:mailergroup/git-hook-validator.git .
-chmod a+x commit-msg post-checkout pre-push
+chmod a+x commit-msg post-checkout pre-push pre-commit
 ```
 
 ### Globally using Git Templates
@@ -20,7 +20,7 @@ git config --global init.templatedir '~/.git-templates'
 mkdir ~/.git-templates/hooks
 cd ~/.git-templates/hooks
 git clone git@github.com:mailergroup/git-hook-validator.git .
-chmod a+x commit-msg post-checkout pre-push
+chmod a+x commit-msg post-checkout pre-push pre-commit
 ```
 
 ## Usage
@@ -81,3 +81,9 @@ The configuration contains the following items by default:
 If you want to disable hook temporarily just change `enabled` to `false`.
 
 You can also add new branch types in this configuration, which allows you to have different configurations per project and a sane "default" in global configuration.
+
+### PHP Code Sniffer
+PHPCS hooks is executed as a pre-commit hook and it offers an automated execution of `phpcbf` as well. If you want to skip `phpcs` during code commit, just append `--no-verify`, ie:
+```
+git commit -m "feat: Some commit" --no-verify
+```

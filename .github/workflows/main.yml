@@ -1,0 +1,26 @@
+---
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  release:
+    name: Create a new release
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/mailergroup/semver/semantic-versioning:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create new release
+        run: |
+          npx semantic-release
