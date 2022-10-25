@@ -5,6 +5,7 @@
     "types": [
         "feature",
         "hotfix",
-        "bugfix"
+        "bugfix",
+        "renovate"
     ]
 }
