@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from commit_message_validator import format
+import format
 
 RESULT_SUCCESS = 0
 RESULT_FAIL = 1

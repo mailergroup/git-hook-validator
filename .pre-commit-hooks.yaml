@@ -1,0 +1,7 @@
+- id: commit-message-validator
+  name: Conventional Commit
+  entry: commit-message-validator
+  language: python
+  description: Checks commit message for Conventional Commits formatting
+  always_run: true
+  stages: [commit-msg]
